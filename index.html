@@ -5,16 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Arnaud Grimmelprez | Freelance Data Analyst</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Arnaud Grimmelprez</h1>
-    <p>Freelance Business Data Analyst</p>
-    <p class="subhead">Power BI &bull; ServiceNow &bull; Reporting &amp; Insight</p>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Arnaud Grimmelprez</h1>
+      <p>Freelance Business Data Analyst</p>
+      <p class="subhead">Power BI &bull; ServiceNow &bull; Reporting &amp; Insight</p>
+      <a href="#contact" class="cta-button">Let’s work together</a>
+    </div>
   </header>
 
-  <section id="about">
-    <h2>👋 About</h2>
+  <section id="about" data-aos="fade-up">
+    <h2><i class="fas fa-user"></i> About</h2>
     <p>
       I'm Arnaud Grimmelprez — a freelance <strong>Business Data Analyst</strong> based in Brussels.<br>
       I help teams clarify messy, half-defined needs and turn them into
@@ -25,8 +30,8 @@
     </p>
   </section>
 
-  <section id="work">
-    <h2>📈 Recent Work</h2>
+  <section id="work" data-aos="fade-up">
+    <h2><i class="fas fa-briefcase"></i> Recent Work</h2>
     <div class="project">
       <h3>STIB-MIVB (2021–Today)</h3>
       <ul>
@@ -51,11 +56,11 @@
     </div>
   </section>
 
-  <section id="contact">
-    <h2>📧 Contact</h2>
+  <section id="contact" data-aos="fade-up">
+    <h2><i class="fas fa-envelope"></i> Contact</h2>
     <p>
       Interested in working together? Feel free to reach out:<br>
-      <strong>Email:</strong> arnaud.grimmelprez@email.com<br>
+      <strong>Email:</strong> <a href="mailto:arnaud.grimmelprez@email.com">arnaud.grimmelprez@email.com</a><br>
       <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/arnaudgrimmelprez" target="_blank">linkedin.com/in/arnaudgrimmelprez</a><br>
       <strong>CV:</strong> <a href="#">Download PDF</a>
     </p>
@@ -64,5 +69,10 @@
   <footer>
     <p>&copy; 2025 Arnaud Grimmelprez. All rights reserved.</p>
   </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true });
+  </script>
 </body>
 </html>
