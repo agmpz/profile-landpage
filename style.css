@@ -1,5 +1,3 @@
-/* Minimalist dark theme inspired by Carrd, with improved centering */
-
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
 
 * {
@@ -10,15 +8,42 @@
 
 body {
   font-family: 'Outfit', sans-serif;
-  background-color: #0d0d0d;
-  color: #eeeeee;
+  background-color: #2a2a2a;
+  color: #f0f0f0;
   line-height: 1.7;
   scroll-behavior: smooth;
 }
 
+.fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in-top {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInTop 1s ease-out forwards;
+    animation-delay: 0.3s;
+  }
+  
+  @keyframes fadeInTop {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }  
+
 .hero {
   height: 100vh;
-  background: linear-gradient(to bottom, #111 0%, #0d0d0d 100%);
+  background: linear-gradient(to bottom, #333 0%, #2a2a2a 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,23 +61,24 @@ body {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
+  color: #f4f4f4;
 }
 
 .hero-content p {
   font-size: 1.2rem;
-  color: #bbbbbb;
+  color: #cfcfcf;
 }
 
 .subhead {
   font-size: 0.95rem;
-  color: #888;
+  color: #999;
   margin-top: 0.5rem;
 }
 
 .cta-button {
   margin-top: 2rem;
-  background-color: #ffcc66;
-  color: #0d0d0d;
+  background-color: #f2c27d;
+  color: #1e1e1e;
   padding: 0.75rem 1.5rem;
   font-weight: 600;
   border: none;
@@ -60,35 +86,52 @@ body {
   text-decoration: none;
   transition: background 0.3s ease;
   display: inline-block;
+  opacity: 0;
+  animation: buttonFadeIn 1.1s ease forwards;
+  animation-delay: 0.7s;
 }
 
+@keyframes buttonFadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
 .cta-button:hover {
-  background-color: #f0b84d;
+  background-color: #e0ae60;
 }
 
 section {
-  max-width: 800px;
-  margin: 4rem auto;
-  padding: 0 1.5rem;
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+    background-color: #333333; /* ajoute un fond léger si besoin */
+    border-radius: 8px;
+    padding: 3rem 2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 p {
-    padding-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 h2 {
   font-size: 1.6rem;
   margin-bottom: 1rem;
-  color: #ffcc66;
-  border-bottom: 1px solid #222;
+  color: #f2c27d;
+  border-bottom: 1px solid #333;
   padding-bottom: 0.5rem;
 }
 
 .project h3 {
   font-weight: 600;
   margin-top: 2rem;
-  color: #eeeeee;
+  color: #f4f4f4;
 }
+
+.project h3 i.fa-angle-right {
+    color: #7ac7f6;
+  }
 
 ul {
   padding-left: 1.5rem;
@@ -97,11 +140,11 @@ ul {
 
 ul li {
   margin-bottom: 0.5rem;
-  color: #ccc;
+  color: #d4d4d4;
 }
 
 a {
-  color: #66ccff;
+  color: #7ac7f6;
   text-decoration: none;
 }
 
@@ -113,8 +156,8 @@ footer {
   text-align: center;
   padding: 2rem;
   font-size: 0.9rem;
-  color: #666;
-  background-color: #111;
+  color: #ccc;
+  background-color: #2a2a2a;
   margin-top: 5rem;
 }
 
@@ -131,3 +174,20 @@ footer {
     padding: 0.65rem 1.2rem;
   }
 }
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #f2c27d;
+    margin: 0 auto 1rem;
+    display: block;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease;
+  }
+  
+  .profile-pic:hover {
+    transform: scale(1.05);
+  }
+  
