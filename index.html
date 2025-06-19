@@ -9,6 +9,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+
     <script>
         if ('scrollRestoration' in history) {
           history.scrollRestoration = 'manual';
@@ -21,16 +22,17 @@
       </script>
       
   <header class="hero">
-    <div class="hero-content">
+    <div class="hero-content fade-in-top">
+        <img src="profile.jpg" alt="Arnaud Grimmelprez" class="profile-pic" data-aos="fade-up" />
       <h1>Arnaud Grimmelprez</h1>
       <p>Freelance Business Data Analyst</p>
       <p class="subhead">Power BI &bull; ServiceNow &bull; Reporting &amp; Insight</p>
-      <a href="#about-title" class="cta-button">See how I help teams move forward</a>
+      <a href="#about" class="cta-button">See how I help teams move forward</a>
     </div>
   </header>
 
   <section id="about" data-aos="fade-up">
-    <h2 id="about-title"><i class="fas fa-user"></i> About</h2>
+    <h2><i class="fas fa-user"></i> About</h2>
     <p>
       I'm Arnaud Grimmelprez — a freelance <strong>Business Data Analyst</strong> based in Ecaussinnes
        — right between Brussels and the Hainaut hubs, 
@@ -44,39 +46,52 @@
     </p>
   </section>
 
-  <section id="work" data-aos="fade-up">
-    <h2><i class="fas fa-briefcase"></i> Recent Work</h2>
+  <section id="work" class="fade-up">
+    <h2><i class="fas fa-layer-group"></i> Projects & Impact</h2>
+  
     <div class="project">
-      <h3>ESM Platform Reporting and Dashboarding</h3>
+      <h3><i class="fa-solid fa-angle-right"></i> ServiceNow & Platform Analytics</h3>
+      <p><em>Ongoing support to the ESM platform team and domain owners. I design and iterate dashboards, reports and KPIs to help teams make the most of their ServiceNow data - across ITSM, CMDB, Asset, Demand and Portfolio Management.</em></p>
       <ul>
-        <li>Designed and deployed 25+ ServiceNow dashboards across diverse modules (ITSM, Asset Management, Demand Management, Portfolio Management, ...)</li>
-        <li>Reduced load time from 14s to 1.5s across 1300+ projects</li>
-        <li>Adoption: 100+ weekly users</li>
-        <li>Contributed to ISO9001 indicators through data analysis</li>
+        <li><strong>Dashboard suite</strong><br>
+          30+ dashboards &bull; 100+ active users</li>
+        <li><strong>ITSM Expertise</strong><br>
+          Contributed to ISO9001 KPIs &bull; Stakeholder-aligned reporting</li>
+        <li><strong>Platform usage tracking</strong><br>
+            Tracked module usage and session frequency to support training, measured adoption & engagement across ServiceNow modules</li>
       </ul>
     </div>
+  
     <div class="project">
-      <h3>Post-COVID Employee Survey</h3>
+      <h3><i class="fa-solid fa-angle-right"></i> IT Data Analytics</h3>
+      <p><em>Ad hoc or exploratory analyses for internal stakeholders, often to support infrastructure decisions or executive-level insights.</em></p>
       <ul>
-        <li>Surveyed 200+ employees</li>
-        <li>Delivered visual HR reporting for strategic follow-up</li>
+        <li><strong>IT Storage Capacity Review</strong><br>
+            Processed & visualised volume evolution across 1000+ servers &bull; Helped anticipate infrastructure needs and align budgets</li>
+        <li><strong>Employee Satisfaction Survey</strong><br>
+            Compiled answers from 200+ participants &bull; Created slides tailored to both execs and team managers</li>
       </ul>
     </div>
+  
     <div class="project">
-      <h3>IT Storage Capacity Review</h3>
+      <h3><i class="fa-solid fa-angle-right"></i> ITSM & Process Review</h3>
+      <p><em>Earlier contributions in Governance & Methods — focused on evaluating and refining IT service performance.</em></p>
       <ul>
-        <li>Created forecasting KPIs for infrastructure budget planning</li>
+        <li><strong>ITSM process audits</strong><br>
+            Interviewed process owners &bull; Mapped bottlenecks &bull; Proposed optimisations for incident, request and change workflows</li>
+        <li><strong>KPI framework refinement</strong><br>
+          Improved alignment between indicators and actual value delivered to end users</li>
       </ul>
     </div>
   </section>
-
+  
   <section id="contact" data-aos="fade-up">
     <h2><i class="fas fa-envelope"></i> Contact</h2>
     <p>
       Interested in working together? Feel free to reach out:<br>
-      <strong>Email:</strong> <a href="mailto:arnaud.grimmelprez@email.com">arnaud.grimmelprez@email.com</a><br>
-      <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/arnaud-grimmelprez/" target="_blank">linkedin.com/in/arnaud-grimmelprez</a><br>
-      <strong>CV:</strong> <a href="#">Download PDF</a>
+      <i class="fa-solid fa-at"></i> <a href="mailto:arnaud&#64;grimmelprez&#46;be">arnaud&#64;grimmelprez&#46;be</a><br>
+      <i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/arnaud-grimmelprez/" target="_blank">linkedin.com/in/arnaud-grimmelprez</a><br>
+      <i class="fa-solid fa-file-arrow-down"></i> <a href="#">Download CV</a>
     </p>
   </section>
 
@@ -94,7 +109,7 @@
       e.preventDefault();
       const target = document.querySelector(this.getAttribute("href"));
       if (target) {
-        const yOffset = -60; // Décalage haut en pixels
+        const yOffset = -120; // Décalage haut en pixels
         const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
         window.scrollTo({ top: y, behavior: "smooth" });
       }
