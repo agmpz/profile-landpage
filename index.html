@@ -119,6 +119,19 @@
   <a href="#contact" id="contact-float" class="floating-contact" title="Go to contact">
   <i class="fas fa-envelope"></i>
 </a>
+<script>
+  const contactBtn = document.getElementById("contact-float");
+  const aboutSection = document.getElementById("about");
+
+  window.addEventListener("scroll", () => {
+    const triggerPoint = aboutSection.offsetTop + aboutSection.offsetHeight / 2;
+    if (window.scrollY > triggerPoint) {
+      contactBtn.classList.add("show");
+    } else {
+      contactBtn.classList.remove("show");
+    }
+  });
+</script>
 
 </body>
 </html>
