@@ -190,26 +190,35 @@ footer {
   .profile-pic:hover {
     transform: scale(1.05);
   }
-  
-.floating-contact {
-  position: fixed;
-  bottom: 40px;
-  right: 30px;
-  background-color: #f2c27d;
-  color: #1e1e1e;
-  padding: 0.8rem 1rem;
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 1.2rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 999;
-  opacity: 0;
-  pointer-events: none;
+#about {
+  position: relative;
 }
 
-.floating-contact.show {
+/* bouton flottant DANS la section */
+.section-contact-float {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: #f2c27d;
+  color: #1e1e1e;
+  padding: 0.7rem 0.9rem;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.1rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#about:hover .section-contact-float {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
+}
+
+.section-contact-float:hover {
+  background-color: #e0ae60;
 }
