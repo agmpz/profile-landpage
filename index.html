@@ -99,6 +99,10 @@
     <p>&copy; 2025 Arnaud Grimmelprez. All rights reserved.</p>
   </footer>
 
+<a href="#contact" class="floating-contact" id="contactFloatBtn" title="Go to contact">
+  <i class="fas fa-envelope"></i>
+</a>
+  
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({ once: true });
@@ -117,21 +121,40 @@
   });
 </script>
 <script>
-  const contactBtn = document.getElementById("contact-float");
-  const aboutSection = document.getElementById("about");
+  const floatBtn = document.getElementById("contactFloatBtn");
 
-  window.addEventListener("scroll", () => {
-    const triggerPoint = aboutSection.offsetTop + aboutSection.offsetHeight / 2;
-    if (window.scrollY > triggerPoint) {
-      contactBtn.classList.add("show");
+  const showSections = ['about', 'work'];
+  const hideSection = document.getElementById('contact');
+
+  let isInShowZone = false;
+  let isInHideZone = false;
+
+  const updateButtonVisibility = () => {
+    if (isInShowZone && !isInHideZone) {
+      floatBtn.classList.add("show");
     } else {
-      contactBtn.classList.remove("show");
+      floatBtn.classList.remove("show");
     }
-  });
+  };
+
+  const observeSection = (id, setFlag) => {
+    const section = document.getElementById(id);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setFlag(entry.isIntersecting);
+        updateButtonVisibility();
+      },
+      { threshold: 0.15 }
+    );
+    observer.observe(section);
+  };
+
+  observeSection('about', val => isInShowZone = val);
+  observeSection('work', val => isInShowZone = isInShowZone || val);
+  observeSection('contact', val => isInHideZone = val);
 </script>
-<a href="#contact" class="floating-contact" id="contactFloatBtn" title="Go to contact">
-  <i class="fas fa-envelope"></i>
-</a>
+
+
 
 </body>
 </html>
