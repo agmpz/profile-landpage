@@ -191,3 +191,25 @@ footer {
     transform: scale(1.05);
   }
   
+.floating-contact {
+  position: fixed;
+  bottom: 40px;
+  right: 30px;
+  background-color: #f2c27d;
+  color: #1e1e1e;
+  padding: 0.8rem 1rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.floating-contact.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
