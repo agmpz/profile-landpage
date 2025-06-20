@@ -194,11 +194,11 @@ footer {
   position: relative;
 }
 
-/* bouton flottant DANS la section */
-.section-contact-float {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
+.floating-contact {
+  position: fixed;
+  top: 50%;
+  left: calc(50% + 420px); /* Centré + un petit décalage (colonne = 800px wide) */
+  transform: translateY(-50%);
   background-color: #f2c27d;
   color: #1e1e1e;
   padding: 0.7rem 0.9rem;
@@ -206,19 +206,18 @@ footer {
   text-decoration: none;
   font-size: 1.1rem;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-  transition: background 0.3s ease;
-  opacity: 0;
-  transform: translateY(10px);
-  pointer-events: none;
   transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1000;
 }
 
-#about:hover .section-contact-float {
+.floating-contact.show {
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(0);
+  transform: translateY(-50%) scale(1.05);
 }
 
-.section-contact-float:hover {
+.floating-contact:hover {
   background-color: #e0ae60;
 }
